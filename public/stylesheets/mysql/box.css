@@ -1,0 +1,202 @@
+@font-face {
+  font-family: 'Roboto';
+  src: URL('Roboto-Regular.ttf') format('truetype');
+}
+/* PALETTE DE COULEUR
+-- LIGHTWHITE : #F4F8FB
+-- BLUE : #506CAE
+-- PURPLE : #CC5A98
+-- GREEN : #97C23A
+-- GRAY : #949CB7
+-- CHAIR : #D9A6B5
+ */
+:root {
+  --main-bg-color: white;
+  --main-elem-color: #F4F8FB;
+  --main-subElem-color : #edf5fa;
+  --main-border-color : lightgray;
+  /* COULEUR DES POLICES */
+  --font-color-main : black;
+  --font-color-option1 : white;
+  /* COULEUR DES ICONES */
+  --icoDb-color: #ff6161;
+  --icoTable-color: #90c335;
+  --icoRow-color: #985bff;
+  --rowBorder-color: #506CAE;
+}
+
+#box[name="addAccount"] {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: var(--main-subElem-color);
+    top: 25%;
+    left: 25%;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    z-index: 2;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+#box[name="addAccount"] div[name="header"] {
+    height: 1vw;
+    background-color: lightgrey;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+#box[name="addAccount"] div[name="header"] div[name="box_close"] {
+    height: 0.5vw;
+    width: 1vw;
+    background-color: red;
+    margin: auto;
+    margin-right: 0.2vw;
+    border-radius: 1vw;
+    filter: drop-shadow(1px 1px 0.1vw red);
+    cursor: default;
+}
+
+#box[name="addAccount"] div[name="header"] div[name="box_close"]:hover {
+    filter: drop-shadow(1px 1px 0.2vw red);
+}
+
+#box[name="addAccount"] div[name="fields"] {
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content 1fr;
+    overflow-y: auto;
+}
+
+#box[name="addAccount"] div[name="fields"] input {
+    width: 70%;
+    margin: auto;
+    margin-top: 1vw;
+    height: 2vw;
+    font-size: 1vw;
+    text-align: center;
+    border-radius: 0.5vw;
+    border: none;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+#box[name="addAccount"] div[name="fields"] p {
+    background-color: var(--rowBorder-color);
+    width: min-content;
+    margin: auto;
+    font-size: 3vw;
+    color: white;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 1vw;
+    filter: drop-shadow(2px 4px 10px darkgray);
+}
+
+
+
+#box[name="SQLQuerry"] {
+    height: 80%;
+    width: 80%;
+    background-color: lightblue;
+    z-index: 2;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content 1fr;
+    border: 1px solid lightgray;
+    font-size: 1vw;
+}
+
+#box[name="SQLQuerry"] div[name="header"] {
+    height: 1vw;
+    background-color: lightgrey;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+#box[name="SQLQuerry"] div[name="header"] div[name="box_close"] {
+    height: 0.5vw;
+    width: 1vw;
+    background-color: red;
+    margin: auto;
+    margin-right: 0.2vw;
+    border-radius: 1vw;
+    filter: drop-shadow(1px 1px 0.1vw red);
+    cursor: default;
+}
+
+#box[name="SQLQuerry"] div[name="header"] div[name="box_close"]:hover {
+    filter: drop-shadow(1px 1px 0.2vw red);
+}
+
+#box[name="SQLQuerry"] select {
+    width: 50%;
+    margin: auto;
+    margin-top: 1vw;
+}
+
+#box[name="SQLQuerry"] textarea {
+    resize: none;
+    width: 80%;
+    height: 10vw;
+    overflow-y: auto;
+    margin: auto;
+    margin-top: 1vw;
+    font-size: 1.5vw;
+}
+
+#box[name="SQLQuerry"] p[name="action"] {
+    margin: auto;
+    margin-top: 1vw;
+    border-radius: 0.5vw;
+    padding: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    color: white;
+    background-color: var(--rowBorder-color);
+}
+
+#box[name="SQLQuerry"] div[name="results"] {
+    width: 80%;
+    border: 1px solid white;
+    height: 90%;
+    overflow-y: auto;
+    margin: auto;
+    background-color: white;
+    filter: blur(5px);
+    text-align: center;
+}
+
+#box[name="SQLQuerry"] div[name="results"].active {
+    filter: blur(0px);
+}
+
+#box[name="SQLQuerry"] div[name="results"].active div[name="rows"] {
+    margin-left: 1vw;
+    text-align: center;
+    font-size: 0.6vw;
+    border: 1px solid var(--rowBorder-color);
+}
+
+#box[name="SQLQuerry"] div[name="results"].active div[name="rows"] div[name="rowTitle"] {
+    border: 1px solid var(--rowBorder-color);
+    background-color: var(--rowBorder-color);
+    color: white;
+}
+
+#box[name="SQLQuerry"] div[name="results"].active div[name="rows"] div[name="row"] {
+    border: 1px solid var(--rowBorder-color);
+    display: grid;
+    padding-top: 0.15vw;
+    padding-bottom: 0.15vw;
+}
+
+#box[name="SQLQuerry"] div[name="results"].active div[name="rows"] div[name="row"]:hover {
+    background-color: var(--rowBorder-color);
+    color: white;
+}
+
+#box[name="SQLQuerry"] div[name="results"].active div[name="rows"] div[name="row"] p {
+    margin: auto;
+}

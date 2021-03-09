@@ -1,0 +1,136 @@
+div#loading.active {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    z-index: 2;
+    /* filter: brightness(0.5); */
+}
+
+div#loading {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    filter: none;
+    transition: 1.5s;
+    pointer-events: none;
+    display: grid;
+    grid-template-rows: 1fr min-content 1fr;
+    padding-top: 5vw;
+}
+
+div#loading div{
+    transition: 1s;
+}
+
+div#loading.active div{
+    transition: 1s;
+}
+
+div#loading div[name="1"] {
+    height: 0;
+    width: 0;
+    /* background-color: green; */
+    /* border-radius: 15vw; */
+    background-image: url(../../images/mysql/settings.png);
+    border-radius: 15vw;
+    background-color: black;
+    background-position: center;
+    background-size: 0%;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-bottom: 0;
+}
+div#loading div[name="2"] {
+    height: 0;
+    width: 0;
+    background-image: url(../../images/mysql/settings.png);
+    background-color: transparent;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 0;
+}
+
+div#loading.active div[name="1"] {
+    height: 20vw;
+    width: 20vw;
+    background-image: url(../../images/mysql/settings.png);
+    background-color: transparent;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* margin-top: 5vw; */
+}
+div#loading.active div[name="2"] {
+    height: 10vw;
+    width: 10vw;
+    background-image: url(../../images/mysql/settings.png);
+    background-color: transparent;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: rotate(22.5deg);
+}
+
+div#loading div[name="progressBar"] {
+    display: none;
+}
+
+div#loading.active div[name="progressBar"] {
+    width: 50%;
+    height: 5vw;
+    border: 1vw solid black;
+    top: 60%;
+    left: 25%;
+    display: block;
+    background-size: 20%;
+    margin: auto;
+    margin-top: 1vw;
+    color: white;
+}
+
+div#loading.active div[name="progressBar"] p {
+    position: absolute;
+    margin: 0;
+    height: 4vw;
+    z-index: 1;
+    font-size: 4vw;
+    width: 50%;
+    text-align: center;
+}
+
+div#loading.active div[name="progressBar"] div {
+    height: 100%;
+    width: 0%;
+    background-color: black;
+    border: 0.5vw solid black;
+    transform: translateY(-0.5vw) translateX(-0.5vw);
+    position: relative;
+}
+
+/* div#loading div[name="loadInfos"] {
+    display: none;
+}
+
+div#loading.active div[name="loadInfos"] {
+    width: 50%;
+    height: 5vw;
+    border: 1vw solid black;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    display: grid;
+}
+
+div#loading.active div[name="loadInfos"] p {
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+    font-size: 4vw;
+    font-weight: bold;
+    color: white;
+    transition: 1s;
+} */

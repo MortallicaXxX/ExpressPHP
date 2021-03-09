@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'Roboto';
+  src: URL('Roboto-Regular.ttf') format('truetype');
+}
+/* PALETTE DE COULEUR
+-- LIGHTWHITE : #F4F8FB
+-- BLUE : #506CAE
+-- PURPLE : #CC5A98
+-- GREEN : #97C23A
+-- GRAY : #949CB7
+-- CHAIR : #D9A6B5
+ */
+:root {
+  --main-bg-color: white;
+  --main-elem-color: #F4F8FB;
+  --main-subElem-color : #edf5fa;
+  --main-border-color : lightgray;
+  /* COULEUR DES POLICES */
+  --font-color-main : black;
+  --font-color-option1 : white;
+  /* COULEUR DES ICONES */
+  --icoDb-color: #ff6161;
+  --icoTable-color: #90c335;
+  --icoRow-color: #985bff;
+  --rowBorder-color: #506CAE;
+}
+
+html{
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  font-family: Roboto;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  overflow: hidden;
+}
+
+input{
+  outline: none;
+}
+
+div#container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 5% 1fr;
+    grid-template-columns: 15% 1fr 1fr;
+    font-size: 0.8vw;
+}
+
+div#container div[name="header"] {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    /* background-color: lightsalmon; */
+    border: 1px solid var(--main-border-color);
+    display: grid;
+    grid-auto-columns: min-content;
+}
+
+div#container div[name="header"] div.mainIco {
+    display: grid;
+    background-color: var(--rowBorder-color);
+    color: var(--font-color-option1);
+    font-size: 0.8vw;
+    border-radius: 0.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: fit-content;
+    margin: auto;
+    height: 80%;
+    margin-left: 0.5vw;
+}
+
+div#container div[name="header"] div.mainIco p {
+    margin: auto;
+    width: min-content;
+}
+
+div#container div[name="menuLeft"] {
+    grid-column-start: 2;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    /* background-color: lightcoral; */
+    border: 1px solid var(--main-border-color);
+    border-top: none;
+}
+
+div#container div[name="content"] {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    /* background-color: lightblue; */
+    border-bottom: 1px solid var(--main-border-color);
+    border-right: 1px solid var(--main-border-color);
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+div#container div[name="content"] div[name="dbs"] {
+    display: grid;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] {
+    background-color: var(--main-elem-color);
+    /* border: 1px solid blue; */
+    display: grid;
+    margin: 1vw;
+    margin-bottom: 0;
+    border-radius: 0.2vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    min-height: 1.5vw;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="table"] {
+  display: none;
+  margin-left: 1vw;
+  margin-top: 0.2vw;
+  padding-left: 0.5vw;
+  font-size: 0.7vw;
+  background-color: var(--main-subElem-color);
+  border-radius: 0.4vw;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="table"] div[name="tableHead"] {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="table"] div[name="tableHead"] div[name="tableIco"] {
+    background-color: var(--icoTable-color);
+    display: grid;
+    color: white;
+    border-radius: 0.2vw;
+    transform: rotate(45deg);
+    height: 1vw;
+    width: 1vw;
+    font-size: 0.7vw;
+    margin: auto;
+    margin-right: 1vw;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="table"] div[name="tableHead"] div[name="tableIco"] p {
+    margin: auto;
+    transform: rotate(-45deg);
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div {
+    display: grid;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="dbHead"] {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div[name="dbHead"] {
+    padding-top: 0.5vw;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="dbHead"] div[name="dbIco"] {
+    background-color: var(--icoDb-color);
+    display: grid;
+    color: white;
+    border-radius: 0.2vw;
+    transform: rotate(45deg);
+    height: 1vw;
+    width: 1vw;
+    font-size: 0.7vw;
+    margin: auto;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="dbHead"] div[name="dbIco"] p {
+    margin: 0.1vw;
+    transform: rotate(-45deg);
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"] div[name="dbHead"] p {
+    margin: auto;
+    margin-left: 1vw;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div[name="rows"] {
+    margin-left: 1vw;
+    text-align: center;
+    font-size: 0.6vw;
+    border: 1px solid var(--rowBorder-color);
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div[name="rows"] div[name="rowTitle"] {
+    border: 1px solid var(--rowBorder-color);
+    background-color: var(--rowBorder-color);
+    color: white;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div[name="rows"] div[name="row"] {
+    border: 1px solid var(--rowBorder-color);
+    display: grid;
+    padding-top: 0.15vw;
+    padding-bottom: 0.15vw;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div[name="rows"] div[name="row"]:hover {
+    background-color: var(--rowBorder-color);
+    color: white;
+}
+
+div#container div[name="content"] div[name="dbs"] div[name="db"].active div[name="rows"] div[name="row"] p {
+    margin: auto;
+}
