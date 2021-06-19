@@ -1,0 +1,29 @@
+#container[name="index"] {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 80% 10%;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+/* 
+#reglement {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: max-content 1fr min-content;
+  background-color: ghostwhite;
+  border-radius: 0.5vw;
+  border: 1px solid white;
+  filter: drop-shadow(2px 4px 1px gray);
+}
+
+#reglement h1 {
+    margin: auto;
+}
+
+#reglement p {
+    margin: auto;
+} */
